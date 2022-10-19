@@ -31,13 +31,17 @@ if(mysqli_num_rows($data) > 0) {
 <content>
 	<b> <?php echo $errormsg; ?> </b>
 	<br></br>
-	<?php if($success == true):?>
-	
+	<?php if($success == true):
+		$count = 0;?>
 		<?php
 			while($row = mysqli_fetch_assoc($data)) { ?>
 				<label>Марка:  <?php echo $row['Brand']; ?>; Країна:  <?php echo $row['Country']; ?>; Цiна:  <?php echo $row['Price']; ?>; Рiк:  <?php echo $row['Year']; ?></label>
 			<?php 
+			$count++;
 			} ?>
+		<br></br>
+		<b>Усього автомобілів: <?php echo $count ?></b>
+		<br></br>
 	<?php endif; ?>
 </content>
 
