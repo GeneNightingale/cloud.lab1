@@ -1,5 +1,5 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'cloud_lab1');
+$dbc = mysqli_connect('sql.freedb.tech', 'freedb_nightingale', 'PwMkwxgWPvaDn2&', 'freedb_cloud_lab1');
 $success = false;
 $errormsg = "error";
 if(isset($_POST['submit'])) {
@@ -8,8 +8,8 @@ if(isset($_POST['submit'])) {
 	$input_price = mysqli_real_escape_string($dbc, trim($_POST['price']));
 	$input_year = mysqli_real_escape_string($dbc, trim($_POST['year']));
 	if(!empty($input_brand) && !empty($input_country) && !empty($input_price) && !empty($input_year)) {
-		$query1 = "SELECT * FROM `cars` WHERE Brand = '$input_brand' AND Country = '$input_country' AND Price = $input_price AND Year = $input_year";
-		$query2 = "INSERT INTO `cars` VALUES ('$input_brand', '$input_country', $input_price, $input_year)";
+		$query1 = "SELECT * FROM `Cars` WHERE Brand = '$input_brand' AND Country = '$input_country' AND Price = $input_price AND Year = $input_year";
+		$query2 = "INSERT INTO `Cars` VALUES ('$input_brand', '$input_country', $input_price, $input_year)";
 		$data = mysqli_query($dbc,$query1);
 		if(mysqli_num_rows($data) == 0) {
 			mysqli_query($dbc,$query2);

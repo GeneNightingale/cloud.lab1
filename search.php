@@ -1,10 +1,10 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'cloud_lab1');
+$dbc = mysqli_connect('sql.freedb.tech', 'freedb_nightingale', 'PwMkwxgWPvaDn2&', 'freedb_cloud_lab1');
 $success = false;
 $errormsg = "error";
 if(isset($_POST['submit'])) {
 	$input_brand = mysqli_real_escape_string($dbc, trim($_POST['brand']));
-	$query = "SELECT * FROM `cars` WHERE Brand = '$input_brand'";
+	$query = "SELECT * FROM `Cars` WHERE Brand = '$input_brand'";
 	$data = mysqli_query($dbc,$query);
 	if(mysqli_num_rows($data) > 0) {
 		$success = true;

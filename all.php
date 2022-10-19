@@ -1,8 +1,8 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'cloud_lab1');
+$dbc = mysqli_connect('sql.freedb.tech', 'freedb_nightingale', 'PwMkwxgWPvaDn2&', 'freedb_cloud_lab1');
 $success = false;
 $errormsg = "error";
-$query = "SELECT * FROM `cars`";
+$query = "SELECT * FROM `Cars`";
 $data = mysqli_query($dbc,$query);
 if(mysqli_num_rows($data) > 0) {
 	$success = true;
